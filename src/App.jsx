@@ -1,11 +1,17 @@
 import './App.css'
 import React from 'react'
-import ContentBox from './components/ContentBox'
+import { Route, Routes } from 'react-router-dom'
+import HomeScreen from './components/HomeScreen'
+import ArticleScreen from './components/ArticleScreen'
+
 
 function App() {
   return (
     <div>
-      <ContentBox />
+      <Routes>
+        <Route path='/' element={<HomeScreen />} />
+        <Route path='/articles/:article_id' element={<ArticleScreen />} />
+      </Routes>
     </div>
   )
 }
