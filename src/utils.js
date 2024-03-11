@@ -21,3 +21,7 @@ export function fetchCommentsByArticleId(id) {
     return res.data.commentsArray;
   });
 }
+
+export function patchArticleById(id, vote) {
+  return ncNewsApi.patch(`/api/articles/${id}`, {inc_votes: vote})
+}
