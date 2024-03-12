@@ -27,9 +27,14 @@ export function patchArticleById(id, vote) {
 }
 
 export function postCommentByArticleId(id, comment) {
-  return ncNewsApi.post(`/api/articles/${id}/comments`, {
-    username: comment.username,
-    body: comment.body,
-  })
-  .then((res) => res.data.commentObj)
+  return ncNewsApi
+    .post(`/api/articles/${id}/comments`, {
+      username: comment.username,
+      body: comment.body,
+    })
+    .then((res) => res.data.commentObj);
+}
+
+export function deleteCommentById(id) {
+  return ncNewsApi.delete(`/api/comments/${id}`)
 }
