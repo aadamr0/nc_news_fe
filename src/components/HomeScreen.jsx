@@ -7,9 +7,8 @@ import { fetchArticles } from '../utils';
 import { useParams } from 'react-router-dom';
 
 const HomeScreen = () => {
-    let {topic} = useParams()
-    if (!Object.entries(topic).length) topic = null
-    const [currentTopic, setCurrentTopic] = useState('All articles')
+    const {topic} = useParams()
+    const [currentTopic, setCurrentTopic] = useState(undefined)
     const [currentArticles, setCurrentArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
@@ -18,6 +17,11 @@ const HomeScreen = () => {
             setCurrentArticles(res)
             setIsLoading(false)
         })
+        if (!topic) {
+            setCurrentTopic(undefined)
+        } else {
+            setCurrentTopic(topic)
+        }
     }, [])
 
     if (isLoading) return <p id='is-loading'>Loading...</p>
@@ -28,10 +32,10 @@ const HomeScreen = () => {
                 <ContentHeader />
             </div>
             <div className='grid-item content-box'>
-                <ContentBox topic={topic} currentArticles={currentArticles}/>
+                <ContentBox topic={currentTopic} currentArticles={currentArticles}/>
             </div>
             <div className='grid-item topics-select'>
-                <TopicsSelect setCurrentTopic={setCurrentTopic}/>
+                <TopicsSelect currentTopic={currentTopic} setCurrentTopic={setCurrentTopic}/>
             </div>
         </div>
     );
