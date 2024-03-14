@@ -4,13 +4,15 @@ import ContentHeader from './ContentHeader';
 import '../css/HomeScreen.css'
 import TopicsSelect from './TopicsSelect';
 import { fetchArticles } from '../utils';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
+import SortBy from './SortBy';
 
 const HomeScreen = () => {
     const {topic} = useParams()
     const [currentTopic, setCurrentTopic] = useState(undefined)
     const [currentArticles, setCurrentArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [searchParams, setSearchParams] = useSearchParams()
 
     useEffect(() => {
         fetchArticles().then((res) => {
@@ -32,10 +34,13 @@ const HomeScreen = () => {
                 <ContentHeader />
             </div>
             <div className='grid-item content-box'>
-                <ContentBox topic={currentTopic} currentArticles={currentArticles}/>
+                <ContentBox topic={currentTopic} currentArticles={currentArticles} searchParams={searchParams}/>
             </div>
             <div className='grid-item topics-select'>
                 <TopicsSelect currentTopic={currentTopic} setCurrentTopic={setCurrentTopic}/>
+            </div>
+            <div className='grid-item sort-by-div'>
+                <SortBy setSearchParams={setSearchParams} />
             </div>
         </div>
     );

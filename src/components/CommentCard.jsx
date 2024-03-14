@@ -7,7 +7,7 @@ const CommentCard = (props) => {
     return (
         <div className='comment-card-div'>
             <p className='author' >{comment.author}</p>
-            <p>{comment.body}</p>
+            <p className='body'>{comment.body}</p>
         </div>
     );
 };

@@ -3,8 +3,10 @@ import '../css/ContentBox.css'
 import ArticleThumb from './ArticleThumb';
 
 const ContentBox = (props) => {
-    const {currentArticles} = props
-    const {topic} = props
+    const {currentArticles, topic, searchParams} = props
+    const sortBy = searchParams.get('sortBy')
+    const ascDesc = searchParams.get('ascDesc')
+
     if (topic === 'All articles' || !topic) {
         return (
             <div id='content-box-div'>
