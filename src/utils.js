@@ -38,3 +38,10 @@ export function postCommentByArticleId(id, comment) {
 export function deleteCommentById(id) {
   return ncNewsApi.delete(`/api/comments/${id}`)
 }
+
+export function getTopics() {
+  return ncNewsApi.get(`/api/topics`)
+  .then((res) => {
+    return res.data
+  })
+}
