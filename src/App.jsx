@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomeScreen />} />
           <Route path='/articles/:article_id' element={<ArticleScreen />} />
+          <Route path='/:topic' element={<HomeScreen />} />
         </Routes>
       </UserContext.Provider>
     </div>
