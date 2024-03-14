@@ -26,4 +26,10 @@
         background-color: grey;
         color: white;
     }
+    textarea {
+        font-family: Arial;
+    }
+    .comment-card-whole-div{
+        border: 1px solid black;
+    }
 }

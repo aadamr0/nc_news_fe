@@ -6,8 +6,8 @@ const ArticleThumb = (props) => {
     const {article} = props
     return (
         <div className='article-thumb-div'>
-            <Link to={`/articles/${article.article_id}`}><p>{article.title}</p></Link>
-            <p>{article.topic}</p>
+            <p>Title: <Link to={`/articles/${article.article_id}`}>{article.title}</Link></p>
+            <p>Topic: {article.topic}</p>
         </div>
     );
 };

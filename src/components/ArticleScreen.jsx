@@ -101,14 +101,18 @@ const ArticleScreen = () => {
                 <p>{currentArticle.votes} votes</p>
                 <button value='upvote' onClick={onButtonClick}>Upvote</button>
                 <button value='downvote' onClick={onButtonClick}>Downvote</button>
+                <br></br>
+                <br></br>
                 <form onSubmit={handleCommentSubmit}>
-                    <input onChange={onCommentInputChange} value={commentToPost} placeholder='post comment...'></input>
+                    <textarea rows={'4'} onChange={onCommentInputChange} value={commentToPost} placeholder='Write a comment...'></textarea>
+                    <br></br>
+                    <button>Post</button>
                 </form>
                 {messagePopup ? <p id='commenting-msg'>{messagePopup}</p> : ''}
             </div>
             <div id='comments-div'>
                 {currentComments.map((comment) => {
-                    return <div key={comment.comment_id}>
+                    return <div key={comment.comment_id} className='comment-card-whole-div'>
                         <CommentCard comment={comment}/>
                         {comment.author === currentUser.username ? <button  className='delete-button' value={comment.comment_id} onClick={onDeleteButtonClick}>Delete </button> : null
                         }
