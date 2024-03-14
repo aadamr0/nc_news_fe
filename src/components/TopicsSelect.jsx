@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { getTopics } from '../utils';
+import { useNavigate } from 'react-router-dom';
 
 const TopicsSelect = (props) => {
     const {setCurrentTopic} = props
     const [currentTopics, setCurrentTopics] = useState([])
+    const navigator = useNavigate()
 
     useEffect(() => {
         getTopics()
@@ -14,7 +16,7 @@ const TopicsSelect = (props) => {
     // get list of topics
     // set current topic based on select
     function handleSelectOnChange(e) {
-        setCurrentTopic(e.target.value)
+        navigator(`/${e.target.value}`)
     }
     return (
         <div>

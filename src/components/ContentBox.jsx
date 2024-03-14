@@ -4,10 +4,8 @@ import ArticleThumb from './ArticleThumb';
 
 const ContentBox = (props) => {
     const {currentArticles} = props
-    const {currentTopic} = props
-    const filteredArticles = currentArticles.filter((article) => article.topic === currentTopic)
-
-    if (currentTopic === 'All articles') {
+    const {topic} = props
+    if (topic === 'All articles' || !topic) {
         return (
             <div id='content-box-div'>
                 {
@@ -21,6 +19,7 @@ const ContentBox = (props) => {
         );
     }
     else {
+    const filteredArticles = currentArticles.filter((article) => article.topic === topic)
         return (
             <div id='content-box-div'>
                 {
