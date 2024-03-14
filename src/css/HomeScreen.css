@@ -1,0 +1,33 @@
+@media only screen and (max-width: 6.9in) {
+    #homescreen-div {
+        box-sizing: border-box;
+        border: 0.1em solid grey;
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 15% 55% 15% 15%;
+        grid-template-rows: 10% 10% auto;
+    }
+    .grid-item{
+        box-sizing: border-box;
+        border: 1px solid rgba(0, 128, 0, 50%);
+        overflow: scroll;
+    }
+    .content-box {
+        overflow: scroll;
+        grid-column: 1 / fill;
+        grid-row: 3 / fill
+    }
+    .content-header {
+        grid-column: 1/ fill;
+        grid-row: 2 / 3;
+        overflow: scroll;
+        background-color: grey;
+    }
+    .topics-select {
+        grid-column: 4 / fill;
+        grid-row: 1 / 2;
+    }
+}
