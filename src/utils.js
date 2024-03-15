@@ -16,7 +16,7 @@ export function fetchArticleById(id) {
       return res.data;
     });
   } else {
-    return Promise.reject('bad id type')
+    return Promise.reject("bad id type");
   }
 }
 
