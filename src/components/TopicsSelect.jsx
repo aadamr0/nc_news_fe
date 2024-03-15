@@ -12,7 +12,7 @@ const TopicsSelect = (props) => {
         .then((res) => {
             setCurrentTopics(res)
         })
-    })
+    }, [])
     
     function handleSelectOnChange(e) {
         if (e.target.value !== 'All articles') {

@@ -10,3 +10,17 @@
         white-space: normal;
     }
 }
+@media only screen and (min-width: 6.9in) {
+    .comment-card-div {
+        padding: .5em;
+    }
+
+    .author {
+        font-weight: bold;
+    }
+
+    .body {
+        word-break: break-all;
+        white-space: normal;
+    }
+}

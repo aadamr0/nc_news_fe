@@ -30,7 +30,6 @@ const HomeScreen = () => {
         }
         getTopics().then((topics) => {
             const invalidTopic = topics.every((topicObj) => topicObj.slug !== topic && topic !== undefined)
-            console.log(topic, currentTopic, invalidTopic);
             if (invalidTopic) {
                 setErr('invalid topic') 
             }
