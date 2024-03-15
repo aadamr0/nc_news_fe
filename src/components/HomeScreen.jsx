@@ -57,7 +57,7 @@ const HomeScreen = () => {
     return (
         <div id='homescreen-div' className='grid-container'>
             <div className='grid-item content-header'>
-                <ContentHeader />
+                <ContentHeader currentTopic={currentTopic}/>
             </div>
             <div className='grid-item content-box'>
                 <ContentBox topic={currentTopic} currentArticles={currentArticles} searchParams={searchParams}/>

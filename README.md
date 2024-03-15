@@ -2,7 +2,7 @@
 
 This is a front-end interface for interacting with the nc_news api
 <br>
-A link to the final site can be found [here](https://nc-news-adam.netlify.app/)
+A link to the final site can be found [here](https://nc-news-adam.netlify.app/). Note that the user is 'signed in' as 'happyamy2016'
 <br>
 A link to the api can be found [here](https://github.com/aadamr0/nc-news-api)
 <br>

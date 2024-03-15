@@ -106,7 +106,7 @@ const ArticleScreen = () => {
             
             <div id='article-display-div'>
                 <h1>{currentArticle.title}</h1>
-                <h2>By {currentArticle.author}, posted {currentArticle.created_at}</h2>
+                <h2>By {currentArticle.author}, posted {new Date(currentArticle.created_at).getDate()}/{new Date(currentArticle.created_at).getMonth()}/{new Date(currentArticle.created_at).getFullYear()}</h2>
                 <p>{currentArticle.body}</p>
                 <br></br>
                 <p>{currentArticle.votes} votes</p>

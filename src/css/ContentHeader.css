@@ -1,10 +1,19 @@
 @media only screen and (max-width: 6.9in) {
     #topics-line-div {
         background-color: grey;
+        text-align: center;
+    }
+
+    .topic-p {
+        color: white;
     }
 }
 @media only screen and (min-width: 6.9in) {
     #topics-line-div {
         background-color: grey;
+        text-align: center;
+    }
+    .topic-p {
+        color: white;
     }
 }
