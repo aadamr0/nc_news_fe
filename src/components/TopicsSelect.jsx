@@ -26,8 +26,8 @@ const TopicsSelect = (props) => {
  
     return (
         <div>
-            <label htmlFor='topic-select'>Filter by topic: </label>
-            <select id='topic-select' value={currentTopic} onChange={handleSelectOnChange}>
+            <label className='form-input' htmlFor='topic-select'>Filter by topic: </label>
+            <select className='form-input' id='topic-select' value={currentTopic} onChange={handleSelectOnChange}>
                 <option key={'All articles'} value={'All articles'}>All articles</option>
                 {currentTopics.map((topic) => {
                     return <option key={topic.slug} value={topic.slug}>{topic.slug}</option>

@@ -1,51 +1,58 @@
 @media only screen and (max-width: 6.9in) {
     #article-screen-content-div {
-        border: 1px solid black;
+        border: 0.25em solid black;
         position: absolute;
         width: 98vw;
         left: 50%;
         top: 50%;
-        height: 80vh;
+        height: 90vh;
         overflow: scroll;
-        transform: translate(-50%, -38%);
+        transform: translate(-50%, -50%);
     }
+
     #article-display-div {
         border: 1px solid black;
         padding: 1em;
     }
+
     #comments-div {
         border: 1px solid yellow;
     }
+
     #is-loading {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
     }
+
     #delete-msg {
         background-color: grey;
         color: white;
     }
+
     textarea {
         font-family: Arial;
     }
-    .comment-card-whole-div{
+
+    .comment-card-whole-div {
         border: 1px solid black;
     }
+
     .error-div {
         text-align: center;
     }
 }
 @media only screen and (min-width: 6.9in) {
     #article-screen-content-div {
-        border: 1px solid black;
+        border: 0.25em solid black;
         position: absolute;
         width: 98vw;
         left: 50%;
         top: 50%;
-        height: 80vh;
+        height: 90vh;
         overflow: scroll;
-        transform: translate(-50%, -38%);
+        transform: translate(-50%, -50%);
     }
 
     #article-display-div {

@@ -36,15 +36,15 @@ const SortBy = (props) => {
 
     return (
         <div>
-            <form onSubmit={handleOnFormSubmit}>
-                <select value={sortBy} onChange={handleSelectOnChange}>
+            <form  onSubmit={handleOnFormSubmit}>
+                <select className='form-input' value={sortBy} onChange={handleSelectOnChange}>
                     <option value="date">date</option>
                     <option value="comment_count">comments</option>
                     <option value="votes">votes</option>
                 </select>
-                <button onClick={handleAscDescButtonClick} value={ascDesc}>{ascDesc}</button>
-                <button type='submit'>submit</button>
-                <button onClick={resetParams}>reset</button>
+                <button id='asc-desc' className='form-input' onClick={handleAscDescButtonClick} value={ascDesc}>{ascDesc}</button>
+                <button className='form-input' onClick={resetParams}>reset</button>
+                <button id='submit-button' className='form-input' type='submit'>submit</button>
             </form>
         </div>
     );
