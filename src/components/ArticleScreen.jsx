@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import '../css/ArticleScreen.css'
 import { deleteCommentById, fetchArticleById, fetchCommentsByArticleId, patchArticleById, postCommentByArticleId } from '../utils';
-import { useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import CommentCard from './CommentCard';
 import { UserContext } from '../contexts/UserContext';
 
@@ -15,17 +15,28 @@ const ArticleScreen = () => {
     const currentUser = useContext(UserContext)
     const [deleteMsg, setDeleteMsg] = useState(null)
     const [deletingButtonId, setDeletingButtonId] = useState(null)
+    const [err, setErr] = useState(null)
 
     useEffect(() => {
-        const fetchArticlesPromise = fetchArticleById(article_id)
-        const fetchCommentsPromise = fetchCommentsByArticleId(article_id)
+        setErr(null)
+        const fetchArticlesPromise = fetchArticleById(article_id).catch((err) => {setErr(err)})
+        const fetchCommentsPromise = fetchCommentsByArticleId(article_id).catch((err) => {setErr(err)})
         Promise.all([fetchArticlesPromise, fetchCommentsPromise])
         .then((res) => {
             setCurrentArticle(res[0])
             setCurrentComments(res[1])
             setIsLoading(false)
         })
+        .catch((err) => {setErr(err)})
     }, [])
+
+    if (err) {
+        console.log(err);
+        return <div className='error-div'>
+            <p>Bad request, please enter correct article id</p>
+            <Link to={`/`}>Link to Home</Link>
+        </div>
+    }
 
     function onButtonClick(e) {
     if (e.target.value === 'upvote') {

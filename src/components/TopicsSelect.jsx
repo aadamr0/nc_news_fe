@@ -15,9 +15,13 @@ const TopicsSelect = (props) => {
     })
     
     function handleSelectOnChange(e) {
-        setCurrentTopic(e.target.value)
-        if (e.target.value === 'All articles') navigator(`/`)
-        else navigator(`/${e.target.value}`)
+        if (e.target.value !== 'All articles') {
+            setCurrentTopic(e.target.value)
+            navigator(`/${e.target.value}`)
+        } else {
+            setCurrentTopic(undefined)
+            navigator(`/`)
+        }
     }
  
     return (
