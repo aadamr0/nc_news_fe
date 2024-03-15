@@ -40,7 +40,7 @@ const HomeScreen = () => {
                 <TopicsSelect currentTopic={currentTopic} setCurrentTopic={setCurrentTopic}/>
             </div>
             <div className='grid-item sort-by-div'>
-                <SortBy setSearchParams={setSearchParams} />
+                <SortBy setSearchParams={setSearchParams} searchParams={searchParams}/>
             </div>
         </div>
     );
