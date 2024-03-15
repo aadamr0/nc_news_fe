@@ -15,6 +15,8 @@ export function fetchArticleById(id) {
     return ncNewsApi.get(`/api/articles/${id}`).then((res) => {
       return res.data;
     });
+  } else {
+    return Promise.reject('bad id type')
   }
 }
 
@@ -23,12 +25,16 @@ export function fetchCommentsByArticleId(id) {
     return ncNewsApi.get(`/api/articles/${id}/comments`).then((res) => {
       return res.data.commentsArray;
     });
+  } else {
+    return Promise.reject("bad id type");
   }
 }
 
 export function patchArticleById(id, vote) {
   if (Number(id)) {
     return ncNewsApi.patch(`/api/articles/${id}`, { inc_votes: vote });
+  } else {
+    return Promise.reject("bad id type");
   }
 }
 
@@ -40,11 +46,16 @@ export function postCommentByArticleId(id, comment) {
         body: comment.body,
       })
       .then((res) => res.data.commentObj);
+  } else {
+    return Promise.reject("bad id type");
   }
 }
 
 export function deleteCommentById(id) {
   if (Number(id)) return ncNewsApi.delete(`/api/comments/${id}`);
+  else {
+    return Promise.reject("bad id type");
+  }
 }
 
 export function getTopics() {

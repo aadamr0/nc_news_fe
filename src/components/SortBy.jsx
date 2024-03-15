@@ -13,8 +13,6 @@ const SortBy = (props) => {
         if (sortByParam) setSortBy(sortByParam)
     }, [])
 
-    console.log(ascDesc, sortBy);
-
     function handleOnFormSubmit(e) {
         e.preventDefault()
         setSearchParams({sortBy: sortBy, ascDesc: ascDesc})
