@@ -1,15 +1,12 @@
-# Nc_news front end
+# NC News Front End App
 
-This is a front-end interface for interacting with the nc_news api
+This is a front-end interface for interacting with the [NC News API](https://github.com/aadamr0/nc-news-api)
 <br>
-A link to the final site can be found [here](https://nc-news-adam.netlify.app/). Note that the user is 'signed in' as 'happyamy2016'
+A link to the hosted site can be found [here](https://nc-news-adam.netlify.app/). Note that the user is 'signed in' as 'happyamy2016'
 <br>
-A link to the api can be found [here](https://github.com/aadamr0/nc-news-api)
+The website allows you to view articles; filter articles by topic; sort articles by date, comments or votes; vote on articles; and write and delete comments
 <br>
-The front end allows you to view articles; filter articles by topic; sort articles by date, comments or votes; vote on articles; and write and delete comments
-<br>
-<br>
-It needs node v21.1.0 to run
+It needs Node.js v21.1.0 to run
 <br>
 To run locally, run in the command line:
 <br>
