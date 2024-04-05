@@ -1,8 +1,8 @@
 # NC News Front End App
-
+### About
 This is a front-end interface for interacting with the [NC News API](https://github.com/aadamr0/nc-news-api)
 <br>
-A link to the online hosted website can be found [here](https://nc-news-adam.netlify.app/).
+A link to the website online can be found [here](https://nc-news-adam.netlify.app/). Please note that the hosting service is a little slow, so it might take a moment to load
 <br>
 The website allows you to view articles; filter articles by topic; sort articles by date, comments or votes; vote on articles; and write and delete comments as the user 'happyamy2016'
 <br>
@@ -17,4 +17,4 @@ To run the website locally, run the following list of commands in the command li
 <br>
 npm run dev
 <br>
-Then open the link provided by vite in the command line
+Then open the link provided by Vite in the command line
